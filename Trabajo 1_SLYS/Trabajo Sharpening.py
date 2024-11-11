@@ -49,3 +49,5 @@ axes[1].set_title("Imagen con Sharpening")
 axes[1].axis("off")
 
 plt.show()
+
+input()
