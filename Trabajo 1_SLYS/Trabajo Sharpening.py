@@ -8,7 +8,7 @@ except ImportError:
     print("Instalando las librerías necesarias...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "Pillow", "numpy", "matplotlib"])
     from PIL import Image
-    import numpy as np
+    import numpy as np
     import matplotlib.pyplot as plt
 
 
@@ -48,6 +48,9 @@ output_image = Image.fromarray(output_image)
 # Guardar la imagen procesada en formato BMP
 output_image.save("imagen_sharpened_color_manual.bmp")
 
+# Mostrar la imagen original y la imagen con sharpening lado a lado
+fig, axes = plt.subplots(1, 2, figsize=(12, 6))  # Crear una figura con 1 fila y 2 columnas
+
 # Mostrar la imagen original
 axes[0].imshow(image)
 axes[0].set_title("Imagen Original")
@@ -59,5 +62,3 @@ axes[1].set_title("Imagen con Sharpening")
 axes[1].axis("off")
 
 plt.show()
-
-input()
