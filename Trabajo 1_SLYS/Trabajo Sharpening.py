@@ -1,10 +1,20 @@
-from PIL import Image # type: ignore
-import numpy as np # type: ignore
-import matplotlib.pyplot as plt
+try:
+    from PIL import Image
+    import numpy as np
+    import matplotlib.pyplot as plt
+except ImportError:
+    import subprocess
+    import sys
+    print("Instalando las librerías necesarias...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "Pillow", "numpy", "matplotlib"])
+    from PIL import Image
+    import numpy as np
+    import matplotlib.pyplot as plt
+
 
 # Cargar la imagen en formato BMP
 
-image = Image.open("imagen.bmp").convert("L")  # Convertir a escala de grises
+image = Image.open("img_borrosa.bmp").convert("L")  # Convertir a escala de grises
 image_array = np.array(image)  # Convertir la imagen a un array de NumPy para manipular sus píxeles
 
 # Definir el kernel de sharpening
