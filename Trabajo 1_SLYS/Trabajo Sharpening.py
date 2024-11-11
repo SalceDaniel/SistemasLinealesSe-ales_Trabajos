@@ -52,12 +52,12 @@ output_image.save("imagen_sharpened_color_manual.bmp")
 fig, axes = plt.subplots(1, 2, figsize=(12, 6))  # Crear una figura con 1 fila y 2 columnas
 
 # Mostrar la imagen original
-axes[0].imshow(image)
+axes[0].imshow(image, cmap="gray")
 axes[0].set_title("Imagen Original")
 axes[0].axis("off")
 
 # Mostrar la imagen con sharpening
-axes[1].imshow(output_image)
+axes[1].imshow(output_image, cmap="gray")
 axes[1].set_title("Imagen con Sharpening")
 axes[1].axis("off")
 
